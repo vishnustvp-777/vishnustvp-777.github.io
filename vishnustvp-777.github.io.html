@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vishnu Priyan S T</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      font-size: 16px;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: #1a1a2e;
+      color: white;
+      padding: 50px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    header p.tagline {
+      font-size: 1rem;
+      color: #a9b4d4;
+      margin-bottom: 6px;
+    }
+
+    header p.location {
+      font-size: 0.85rem;
+      color: #6b7a99;
+    }
+
+    .contact-bar {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-bar a {
+      color: #e2b96f;
+      text-decoration: none;
+      font-size: 0.88rem;
+      border: 1px solid #e2b96f;
+      padding: 5px 14px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .contact-bar a:hover {
+      background: #e2b96f;
+      color: #1a1a2e;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      background: #16213e;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      padding: 12px 20px;
+      font-size: 0.88rem;
+      display: block;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      background: #0f3460;
+      color: white;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    .section {
+      background: white;
+      margin-bottom: 20px;
+      padding: 28px 30px;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      border-bottom: 2px solid #e2b96f;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-text {
+      line-height: 1.75;
+      color: #444;
+    }
+
+    /* ---------- STARTUP ---------- */
+    .startup-box {
+      border: 1px solid #e2b96f;
+      border-radius: 6px;
+      padding: 20px 24px;
+      background: #fffdf5;
+    }
+
+    .startup-box h3 {
+      font-size: 1.3rem;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .startup-box .period {
+      font-size: 0.82rem;
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    .startup-box p {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .startup-highlights {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    .startup-highlights li {
+      padding: 5px 0 5px 20px;
+      position: relative;
+      color: #444;
+      font-size: 0.92rem;
+    }
+
+    .startup-highlights li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #e2b96f;
+      font-weight: bold;
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .project {
+      border-left: 3px solid #e2b96f;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      background: #fafafa;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .project h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .project .tech-tag {
+      display: inline-block;
+      background: #1a1a2e;
+      color: #e2b96f;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-right: 4px;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: #555;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .project a {
+      font-size: 0.82rem;
+      color: #0f3460;
+      text-decoration: none;
+      border-bottom: 1px dashed #0f3460;
+    }
+
+    .project a:hover { color: #e2b96f; border-color: #e2b96f; }
+
+    /* ---------- EXPERIENCE ---------- */
+    .job {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .job h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    .job .period {
+      font-size: 0.8rem;
+      color: #999;
+      white-space: nowrap;
+    }
+
+    .job .company {
+      font-size: 0.85rem;
+      color: #e2b96f;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .job p {
+      font-size: 0.91rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skills-row {
+      margin-bottom: 14px;
+    }
+
+    .skills-row label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-tag {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      color: #333;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.83rem;
+    }
+
+    .skill-tag.highlight {
+      background: #1a1a2e;
+      color: #e2b96f;
+      border-color: #1a1a2e;
+    }
+
+    /* ---------- ACHIEVEMENTS ---------- */
+    .achievement {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .achievement:last-child { border-bottom: none; }
+
+    .achievement .medal { font-size: 1.4rem; flex-shrink: 0; }
+
+    .achievement .ach-title {
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .achievement .ach-sub {
+      font-size: 0.82rem;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    /* ---------- EDUCATION ---------- */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .edu-item:last-child { border-bottom: none; }
+
+    .edu-item h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    .edu-item p {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .edu-item .grade {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #e2b96f;
+      white-space: nowrap;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: #aaa;
+      background: white;
+      border-top: 1px solid #eee;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>Vishnu Priyan S T</h1>
+  <p class="tagline">Mechatronics Student · Startup Founder · Software Developer</p>
+  <p class="location">📍 Sri Manakula Vinayagar Engineering College, Puducherry (4th Year)</p>
+  <div class="contact-bar">
+    <a href="mailto:vishnustvp@gmail.com">✉ vishnustvp@gmail.com</a>
+    <a href="tel:+917397563345">📞 +91 73975 63345</a>
+    <a href="https://github.com/vishnustvp-777" target="_blank">🔗 GitHub</a>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#startup">My Startup</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#education">Education</a>
+</nav>
+
+<div class="container">
+
+  <!-- ABOUT -->
+  <div class="section" id="about">
+    <h2>About Me</h2>
+    <p class="about-text">
+      Hi! I'm Vishnu — a 4th-year Mechatronics student who builds things. I started a company at 20, 
+      managed a team of 15+ people, built software tools in ABAP, Java, and Python, and competed in 
+      everything from hackathons to quantum computing challenges. I like solving real problems with 
+      practical technology. Right now I'm especially interested in SAP automation, Tamil language tools, 
+      and biomedical systems.
+    </p>
+  </div>
+
+  <!-- STARTUP -->
+  <div class="section" id="startup">
+    <h2>My Startup — English Aasaan</h2>
+    <div class="startup-box">
+      <h3>English Aasaan</h3>
+      <p class="period">Founder & CEO · Nov 2023 – Jan 2025</p>
+      <p>
+        I founded an EdTech company focused on English communication for working professionals 
+        and graduates. This wasn't a side project — I built it from scratch, hired people, 
+        built a product, and ran operations end-to-end for 14 months.
+      </p>
+      <ul class="startup-highlights">
+        <li>Hired and managed a team of 15+ full-time employees (mostly B.A./M.A. English graduates)</li>
+        <li>Built a YouTube channel as the main lead generation channel</li>
+        <li>Handled everything — strategy, hiring, operations, product, and sales</li>
+        <li>Target customers: working professionals and fresh graduates</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section" id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Tamil Spell Checker</h3>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">NLP</span>
+      <span class="tech-tag">Feb 2026 – ongoing</span>
+      <p>
+        A spell checker for Tamil — one of the world's oldest languages that still lacks good software 
+        tooling. Works locally in real time. Currently expanding the word corpus to make it more 
+        accurate. This is a project I genuinely care about.
+      </p>
+      <a href="https://github.com/vishnustvp-777/tamil-spell-checker.git" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project">
+      <h3>SAP Invoice Automation</h3>
+      <span class="tech-tag">ABAP</span>
+      <span class="tech-tag">SAP</span>
+      <span class="tech-tag">Apr 2025 – ongoing</span>
+      <p>
+        Automates invoice generation from PDFs inside SAP using ABAP. Reduces manual entry errors 
+        and speeds up accounts payable workflows for finance teams.
+      </p>
+      <a href="https://github.com/vishnustvp-777/sap-invoice-automation.git" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project">
+      <h3>AI Tool Recommender Website</h3>
+      <span class="tech-tag">Web</span>
+      <span class="tech-tag">🏆 Hackathon Winner</span>
+      <p>
+        An interactive website where you describe a complex task and it recommends the right AI tools 
+        to complete it. Won First Place at the Software Hackathon, Agni College of Engineering (2026).
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Quantum-Enhanced Breast Health Monitoring System</h3>
+      <span class="tech-tag">Hardware</span>
+      <span class="tech-tag">Quantum Dots</span>
+      <span class="tech-tag">Biomedical</span>
+      <p>
+        A non-invasive diagnostic prototype that combines quantum-dot biosensing with multi-sensor 
+        data fusion to detect early breast abnormalities. Won a project competition at Presidency 
+        University, 2025.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Pick-and-Place Robotic System</h3>
+      <span class="tech-tag">Hardware</span>
+      <span class="tech-tag">Robotics</span>
+      <p>
+        Designed and built a robot that identifies, picks, and places objects using sensor feedback 
+        and programmed motion control. Placed 2nd at Robo Race, NIT Trichy (2025).
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Fujitsu Quantum Simulator Challenge</h3>
+      <span class="tech-tag">Quantum Computing</span>
+      <span class="tech-tag">International</span>
+      <p>
+        Selected for an international challenge to explore quantum algorithm behavior under 
+        probabilistic noise conditions using Fujitsu's quantum simulation tools.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section" id="experience">
+    <h2>Work Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Founder & CEO</h3>
+        <span class="period">Nov 2023 – Jan 2025</span>
+      </div>
+      <div class="company">English Aasaan</div>
+      <p>Built and led an EdTech startup from the ground up. Managed 15+ full-time employees, developed the product, handled strategy and operations, and built a YouTube channel for lead generation.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Content Strategist</h3>
+        <span class="period">Jul 2025 – Nov 2025</span>
+      </div>
+      <div class="company">Luumi Media Pvt Ltd</div>
+      <p>Created performance-driven content strategies and managed digital campaigns to improve audience engagement and generate leads.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Drone Automation Intern</h3>
+        <span class="period">Oct 2025</span>
+      </div>
+      <div class="company">AdroIIT Technovations</div>
+      <p>Worked on drone system integration, control logic, and sensor coordination. Got hands-on with embedded systems and real-time control environments.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3>Automotive Service Technician</h3>
+        <span class="period">May 2025</span>
+      </div>
+      <div class="company">Mirai Garage</div>
+      <p>Assisted with vehicle diagnostics, servicing, and maintenance. Gained exposure to mechanical systems and troubleshooting workflows.</p>
+    </div>
+
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section" id="skills">
+    <h2>Skills</h2>
+
+    <div class="skills-row">
+      <label>Programming Languages</label>
+      <div class="skill-tags">
+        <span class="skill-tag highlight">Python</span>
+        <span class="skill-tag highlight">ABAP</span>
+        <span class="skill-tag highlight">Java</span>
+        <span class="skill-tag highlight">Rust</span>
+        <span class="skill-tag">TypeScript (learning)</span>
+        <span class="skill-tag">Kotlin (learning)</span>
+      </div>
+    </div>
+
+    <div class="skills-row">
+      <label>Platforms & Tools</label>
+      <div class="skill-tags">
+        <span class="skill-tag">SAP</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">Embedded Systems</span>
+        <span class="skill-tag">Signal Processing</span>
+        <span class="skill-tag">Quantum Simulation</span>
+      </div>
+    </div>
+
+    <div class="skills-row">
+      <label>Other Skills</label>
+      <div class="skill-tags">
+        <span class="skill-tag">Team Management</span>
+        <span class="skill-tag">Content Strategy</span>
+        <span class="skill-tag">Research Writing</span>
+        <span class="skill-tag">Technical Presentations</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="section" id="achievements">
+    <h2>Achievements</h2>
+
+    <div class="achievement">
+      <span class="medal">🥇</span>
+      <div>
+        <div class="ach-title">1st Place — Technical Paper Presentation</div>
+        <div class="ach-sub">Erode Government College of Engineering, 2026 · "Detector for Anaemic in Patients"</div>
+      </div>
+    </div>
+
+    <div class="achievement">
+      <span class="medal">🥇</span>
+      <div>
+        <div class="ach-title">1st Place — Software Hackathon</div>
+        <div class="ach-sub">Agni College of Engineering, 2026 · Built an AI tool recommender website</div>
+      </div>
+    </div>
+
+    <div class="achievement">
+      <span class="medal">🥈</span>
+      <div>
+        <div class="ach-title">2nd Place — Robo Race</div>
+        <div class="ach-sub">NIT Trichy, 2025 · Autonomous racing robot</div>
+      </div>
+    </div>
+
+    <div class="achievement">
+      <span class="medal">🏆</span>
+      <div>
+        <div class="ach-title">Winner — Quantum-Enhanced Smart Wearable Project</div>
+        <div class="ach-sub">Presidency University, 2025 · Biosensing + AI diagnostic wearable</div>
+      </div>
+    </div>
+
+    <div class="achievement">
+      <span class="medal">🌐</span>
+      <div>
+        <div class="ach-title">Selected — Fujitsu Quantum Simulator Challenge 2024</div>
+        <div class="ach-sub">International challenge · Quantum algorithm simulation and experimentation</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section" id="education">
+    <h2>Education</h2>
+
+    <div class="edu-item">
+      <div>
+        <h3>B.Tech — Mechatronics Engineering</h3>
+        <p>Sri Manakula Vinayagar Engineering College, Puducherry · 2023–2027</p>
+      </div>
+      <span class="grade">86.5%</span>
+    </div>
+
+    <div class="edu-item">
+      <div>
+        <h3>HSC (Class 12)</h3>
+        <p>Ramakrishna Mission Vidyalaya Matric Higher Secondary School · 2022–2023</p>
+      </div>
+      <span class="grade">90.34%</span>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  Made by Vishnu Priyan S T · Puducherry, India · <a href="https://github.com/vishnustvp-777" style="color:#aaa;">github.com/vishnustvp-777</a>
+</footer>
+
+</body>
+</html>
